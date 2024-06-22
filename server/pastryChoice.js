@@ -1,3 +1,6 @@
+//Hard coded json of fake db from previous incarnation of the app.
+// is not being used in this instance.
+
 const pastryChoice = [
 	{
 		id: 1,
