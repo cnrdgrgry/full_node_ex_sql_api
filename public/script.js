@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			const pastries = await response.json();
 			// This is clearing existing list - if there is one (i.e. on refresh).
 			pastryList.innerHTML = "";
-			//This is listing the pastries and rendering with displayPastry
+			// This is listing the pastries and rendering with displayPastry
 			pastries.forEach((pastry) => {
 				displayPastry(pastry);
 			});
@@ -111,6 +111,9 @@ document.addEventListener("DOMContentLoaded", function () {
 			}
 
 			form.reset(); // Reset form fields after submission
+
+			// Fetch and display updated list of pastries after successful operation
+			fetchAndDisplayPastries();
 		} catch (error) {
 			console.error("Error adding or editing pastry:", error);
 		}
@@ -135,6 +138,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 				// Remove the deleted pastry from the DOM
 				document.getElementById(`pastry-${pastryId}`).remove();
+
+				// Fetch and display updated list of pastries after successful operation
+				fetchAndDisplayPastries();
 			} catch (error) {
 				console.error("Error deleting pastry:", error);
 			}
