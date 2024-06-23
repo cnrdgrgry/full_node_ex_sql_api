@@ -1,28 +1,31 @@
 const express = require("express");
-const app = express();
 const cors = require("cors");
+const path = require("path");
 
+const app = express();
 const PORT = process.env.PORT || 5001;
 
-//CORS - Not necessarily required without a gui landing page, but stll putting in as best practice
+// Enable CORS
 app.use(cors());
 
 // Middleware for parsing req.body
 app.use(express.json());
 
+// Serve static files from the public directory
+app.use(express.static(path.join(__dirname, "public")));
+
+// Define a route to render index.html
+app.get("/", (req, res) => {
+	res.sendFile(path.join(__dirname, "public", "index.html"));
+});
+
 // Import and mount the pastryRouter at the '/pastrypicker' path.
 const pastryRouter = require("./server/pastryPicker");
 app.use("/pastrypicker", pastryRouter);
 
-app.get("/", (request, response) => {
-	response.json({
-		info: "Node.js, Express, and Postgres API. Please visit /pastrypicker for more choice!",
-	});
-});
-
-//Start the server, listening.
+// Start the server
 app.listen(PORT, () => {
-	console.log(`Cors enabled Expess server is listening on port ${PORT}`);
+	console.log(`Server is running on http://localhost:${PORT}`);
 });
 
 module.exports = app;
