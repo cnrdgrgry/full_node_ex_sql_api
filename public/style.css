@@ -1,13 +1,46 @@
 body {
 	font-family: Arial, sans-serif;
+	color: white;
 	margin: 0;
 	padding: 20px;
 }
 
-h1 {
-	text-align: center;
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-image: url("../public/img/fresh-pastries.jpg");
+	background-size: cover;
+	padding-bottom: 7%;
+}
+.pastry-case {
+	width: 80%;
+	background-color: rgba(105, 72, 9, 0.7);
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+	border-radius: 3rem;
 }
 
+h1 {
+	font-size: 4rem;
+	text-align: center;
+}
+.pastry-data {
+	width: 100%;
+	text-align: center;
+}
+#pastry-list {
+	align-self: center;
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+}
+
+.pastry-form {
+	width: 100%;
+	margin-top: 3rem;
+	text-align: center;
+	padding-bottom: 2rem;
+}
 form {
 	display: flex;
 	flex-direction: column;
