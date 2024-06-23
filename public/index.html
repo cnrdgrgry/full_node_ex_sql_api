@@ -8,22 +8,48 @@
 		<script src="script.js" defer></script>
 	</head>
 	<body>
-		<h1>Pastry Picker</h1>
-
-		<h2>Pastries</h2>
-		<ul id="pastry-list"></ul>
-
-		<h2>Add New Pastry</h2>
-		<form id="add-pastry-form">
-			<label for="name">Name:</label>
-			<input type="text" id="name" required />
-			<label for="primaryFlavour">Primary Flavour:</label>
-			<input type="text" id="primaryFlavour" required />
-			<label for="countryOfOrigin">Country of Origin:</label>
-			<input type="text" id="countryOfOrigin" required />
-			<label for="price">Price:</label>
-			<input type="number" id="price" step="0.01" required />
-			<button type="submit">Add Pastry</button>
-		</form>
+		<main class="wrapper" role="main">
+			<h1 aria-label="Pastry Picker">Pastry Picker</h1>
+			<div class="pastry-case">
+				<section class="pastry-data">
+					<h2>Pastries</h2>
+					<ul
+						id="pastry-list"
+						aria-live="polite"
+						aria-relevant="additions"
+					></ul>
+				</section>
+				<section class="pastry-form">
+					<h2>Add or Edit Pastry</h2>
+					<form id="add-pastry-form" aria-labelledby="add-pastry-heading">
+						<label for="name">Name:</label>
+						<input type="text" id="name" required aria-label="Pastry Name" />
+						<label for="primaryFlavour">Primary Flavour:</label>
+						<input
+							type="text"
+							id="primaryFlavour"
+							required
+							aria-label="Primary Flavour"
+						/>
+						<label for="countryOfOrigin">Country of Origin:</label>
+						<input
+							type="text"
+							id="countryOfOrigin"
+							required
+							aria-label="Country of Origin"
+						/>
+						<label for="price">Price:</label>
+						<input
+							type="number"
+							id="price"
+							step="0.01"
+							required
+							aria-label="Price"
+						/>
+						<button type="submit" aria-label="Add Pastry">Add Pastry</button>
+					</form>
+				</section>
+			</div>
+		</main>
 	</body>
 </html>
