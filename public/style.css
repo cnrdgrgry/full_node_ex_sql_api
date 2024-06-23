@@ -9,7 +9,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	background-image: url("../public/img/fresh-pastries.jpg");
+	background-image: url("./img/fresh-pastries.jpg");
 	background-size: cover;
 	padding-bottom: 7%;
 }
